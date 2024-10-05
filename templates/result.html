@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>結果</title>
+</head>
+<body>
+    <div class="container">
+        <h1>打包結果</h1>
+        {% if success %}
+            <div class="success-message">APK 打包成功！</div>
+            <a href="bin/" download>下載 APK 文件</a>
+        {% else %}
+            <div class="error-message">APK 打包失敗，請重試。</div>
+        {% endif %}
+        <a href="{{ url_for('index') }}">返回首頁</a>
+    </div>
+</body>
+</html>
